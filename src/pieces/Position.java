@@ -35,27 +35,40 @@ public class Position {
 	public int getY() {
 		return this.y;
 	}
-	
+
 	Position move(Direction direction) {
-		return new Position(this.x + direction.getXDegree(), this.y + direction.getYDegree());
+		return new Position(this.x + direction.getXDegree(), this.y
+				+ direction.getYDegree());
 	}
 
 	List<Position> findsPosition(Direction direction) {
 		ArrayList<Position> positions = new ArrayList<Position>();
 		Position currentPosition = move(direction);
-		while(currentPosition.isValid()) {
+		while (currentPosition.isValid()) {
 			positions.add(currentPosition);
 			currentPosition = currentPosition.move(direction);
 		}
 		return positions;
 	}
-	
+
+//	List<Position> findLinearPosition(Position position) {
+//		ArrayList<Position> positions = new ArrayList<Position>();
+//		Direction[] linears = Direction.linearDirection();
+//		for (Direction directions : linears) {
+//			Position currentPosition = move(directions);
+//			if(currentPosition.isValid()){
+//				positions.add(currentPosition);
+//			}
+//		}
+//		return positions;
+//	}
+
 	boolean isValid() {
-		if ( y < 0 || y >= Board.ROW_SIZE) {
+		if (y < 0 || y >= Board.ROW_SIZE) {
 			return false;
 		}
 
-		if ( x < 0 || x >= Board.COLUMN_SIZE) {
+		if (x < 0 || x >= Board.COLUMN_SIZE) {
 			return false;
 		}
 
@@ -91,7 +104,5 @@ public class Position {
 	public String toString() {
 		return "Position [x=" + x + ", y=" + y + "]";
 	}
-
-
 
 }
