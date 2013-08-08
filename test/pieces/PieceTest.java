@@ -26,4 +26,12 @@ public class PieceTest extends TestCase {
 		Piece whitePawn = new Pawn(Color.WHITE, source);
 		assertEquals(new Empty(Color.NOCOLOR, source), whitePawn.leave());
 	}
+	
+	public void testEmptyPossibleMove() throws Exception {
+		Position emptyPosition = new Position("a4");
+		Piece empty = new Empty(Color.NOCOLOR, emptyPosition);
+		assertEquals(0, empty.getPossibleMoves().size());
+		
+	}
 }
+

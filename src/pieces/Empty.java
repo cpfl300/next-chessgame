@@ -1,5 +1,6 @@
 package pieces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Empty extends Piece {
@@ -9,6 +10,7 @@ public class Empty extends Piece {
 
 	@Override
 	List<Position> getPossibleMoves() {
-		return null;
+		List<Position> positions = new ArrayList<Position>();
+		return positions;
 	}
 }
