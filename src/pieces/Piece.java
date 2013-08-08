@@ -40,6 +40,10 @@ public abstract class Piece {
 		this.position = position;
 	}
 	
+	protected Position getPosition(){
+		return this.position;
+	}
+	
 	public char getSymbol() {
 		if (isBlack()) {
 			return Character.toUpperCase(type.getSymbol());

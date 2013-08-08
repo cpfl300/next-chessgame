@@ -33,5 +33,11 @@ public class PieceTest extends TestCase {
 		assertEquals(0, empty.getPossibleMoves().size());
 		
 	}
+	
+	public void testRookPossibleMove() throws Exception {
+		Position rookPosition = new Position("a1");
+		Piece rook = new Rook(Color.WHITE, rookPosition);
+		assertEquals(14, rook.getPossibleMoves().size());
+	}
 }
 
