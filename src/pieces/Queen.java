@@ -1,5 +1,6 @@
 package pieces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,6 +11,10 @@ public class Queen extends Piece {
 
 	@Override
 	List<Position> getPossibleMoves() {
-		return null;
+		List<Position> queenPossibleMove = new ArrayList();
+		PositionController positions = new PositionController(getPosition());
+		queenPossibleMove.addAll(positions.findsLinearPositionAll());
+		queenPossibleMove.addAll(positions.findsDiagonalPositionAll());
+		return queenPossibleMove;
 	}
 }

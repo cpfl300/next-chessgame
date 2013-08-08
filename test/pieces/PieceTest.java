@@ -38,12 +38,24 @@ public class PieceTest extends TestCase {
 		Position rookPosition = new Position("a1");
 		Piece rook = new Rook(Color.WHITE, rookPosition);
 		assertEquals(14, rook.getPossibleMoves().size());
+		System.out.println(rook.getPossibleMoves());
+
 	}
 	
 	public void testBishopPossibleMove() throws Exception {
 		Position bishopPosition = new Position("c1");
 		Piece bishop = new Bishop(Color.WHITE,bishopPosition);
 		assertEquals(7, bishop.getPossibleMoves().size());
+		System.out.println(bishop.getPossibleMoves());
+
+	}
+	
+	public void testQueenPossibleMove() throws Exception {
+		Position queenPosition = new Position("d1");
+		Piece queen = new Queen(Color.WHITE, queenPosition);
+		assertEquals(21, queen.getPossibleMoves().size());
+		System.out.println(queen.getPossibleMoves());
+		
 	}
 }
 
