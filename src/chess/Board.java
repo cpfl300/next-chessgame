@@ -3,6 +3,7 @@ package chess;
 import java.util.ArrayList;
 import java.util.List;
 
+import pieces.Empty;
 import pieces.Piece;
 import pieces.Position;
 
@@ -58,6 +59,9 @@ public class Board {
 
 	void movePiece(Position source, Position target) {
 		Piece targetPiece = findPiece(source);
+		if(targetPiece instanceof Empty){
+			return;
+		}
 		Piece sourcePiece = targetPiece.leave();
 		
 		Rank sourceRank = ranks.get(source.getY());

@@ -78,6 +78,7 @@ public class Rank {
 
 	void changePiece(int xPosition, Piece targetPiece) {
 		rank.set(xPosition, targetPiece);
+		
 	}
 
 	Piece move(Piece sourcePiece, Position target) {
