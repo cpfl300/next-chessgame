@@ -71,6 +71,11 @@ public class Board {
 
 		Piece sourcePiece = targetPiece.leave();
 
+		if(targetPiece.isWhite() == findPiece(target).isWhite()){
+			System.out.println("같은 편의 말은 잡을 수 없습니다.");
+			return;
+		}
+		
 		Rank sourceRank = ranks.get(source.getY());
 		sourceRank.move(sourcePiece, source); // 원래 있던 자리를 empty로 비웁니다.
 

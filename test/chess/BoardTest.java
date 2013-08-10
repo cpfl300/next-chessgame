@@ -81,4 +81,13 @@ public class BoardTest extends TestCase {
 		}
 	}
 
+	public void testSameColor() throws Exception {
+		Position src = new Position("a1");
+		Position target = new Position("a2");
+		board.initialize();
+		board.movePiece(src, target);
+		assertTrue(board.findPiece(src) instanceof Rook);
+		assertTrue(board.findPiece(target) instanceof Pawn);
+	}
+	
 }
