@@ -1,7 +1,10 @@
 package chess;
 
 import junit.framework.TestCase;
+import pieces.Bishop;
 import pieces.Empty;
+import pieces.King;
+import pieces.Knight;
 import pieces.Pawn;
 import pieces.Piece;
 import pieces.Piece.Color;
@@ -88,6 +91,27 @@ public class BoardTest extends TestCase {
 		board.movePiece(src, target);
 		assertTrue(board.findPiece(src) instanceof Rook);
 		assertTrue(board.findPiece(target) instanceof Pawn);
+	}
+	
+	public void testPossibleMove() throws Exception {
+		Position knight = new Position("b1");
+		Position knightTarget = new Position("c5");
+		Position bishop = new Position("c1");
+		Position bishopTarget = new Position("c3");
+		Position king = new Position("e1");
+		Position kingTarget = new Position("d3");
+		
+		
+		board.initialize();
+		board.movePiece(knight, knightTarget);
+		board.movePiece(bishop, bishopTarget);
+		board.movePiece(king, kingTarget);
+
+		assertTrue(board.findPiece(knightTarget) instanceof Empty);
+		assertTrue(board.findPiece(bishopTarget) instanceof Empty);
+		assertTrue(board.findPiece(kingTarget) instanceof Empty);
+		System.out.println(board.generateBoard());
+		
 	}
 	
 }

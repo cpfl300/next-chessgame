@@ -3,9 +3,15 @@ package chess;
 import java.util.ArrayList;
 import java.util.List;
 
+import pieces.Bishop;
 import pieces.Empty;
+import pieces.King;
+import pieces.Knight;
+import pieces.Pawn;
 import pieces.Piece;
 import pieces.Position;
+import pieces.Queen;
+import pieces.Rook;
 
 public class Board {
 	public static final String NEW_LINE = System.getProperty("line.separator");
@@ -74,6 +80,43 @@ public class Board {
 		if(targetPiece.isWhite() == findPiece(target).isWhite()){
 			System.out.println("같은 편의 말은 잡을 수 없습니다.");
 			return;
+		}
+		// Piece를 이동가능한 위치가 아닌 곳으로 이동시키려고 하는 경우 이동시키지 않는다.
+		if(targetPiece instanceof Pawn){
+			Pawn pawn = (Pawn) targetPiece;
+			if(!pawn.getPossibleMoves().contains(target)){
+				return;
+			}
+		}
+		if(targetPiece instanceof Bishop){
+			Bishop bishop = (Bishop) targetPiece;
+			if(!bishop.getPossibleMoves().contains(target)){
+				return;
+			}
+		}
+		if(targetPiece instanceof King){
+			King king = (King) targetPiece;
+			if(!king.getPossibleMoves().contains(target)){
+				return;
+			}
+		}
+		if(targetPiece instanceof Knight){
+			Knight knight = (Knight) targetPiece;
+			if(!knight.getPossibleMoves().contains(target)){
+				return;
+			}
+		}
+		if(targetPiece instanceof Queen){
+			Queen queen = (Queen) targetPiece;
+			if(!queen.getPossibleMoves().contains(target)){
+				return;
+			}
+		}
+		if(targetPiece instanceof Rook){
+			Rook rook = (Rook) targetPiece;
+			if(!rook.getPossibleMoves().contains(target)){
+				return;
+			}
 		}
 		
 		Rank sourceRank = ranks.get(source.getY());

@@ -9,7 +9,7 @@ public class Pawn extends Piece {
 	}
 
 	@Override
-	List<Position> getPossibleMoves() {
+	public List<Position> getPossibleMoves() {
 		List<Position> pawnPossibleMove = new ArrayList();
 		if (isWhite()) {
 			pawnPossibleMove.add(getPosition().move(Direction.NORTH));			

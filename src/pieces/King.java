@@ -9,7 +9,7 @@ public class King extends Piece {
 	}
 
 	@Override
-	List<Position> getPossibleMoves() {
+	public List<Position> getPossibleMoves() {
 		List<Position> kingPossibleMove = new ArrayList();
 		PositionController positions = new PositionController(getPosition());
 		kingPossibleMove.addAll(positions.findLinearPosition(getPosition()));

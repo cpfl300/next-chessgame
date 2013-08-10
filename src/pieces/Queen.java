@@ -10,7 +10,7 @@ public class Queen extends Piece {
 	}
 
 	@Override
-	List<Position> getPossibleMoves() {
+	public List<Position> getPossibleMoves() {
 		List<Position> queenPossibleMove = new ArrayList();
 		PositionController positions = new PositionController(getPosition());
 		queenPossibleMove.addAll(positions.findsLinearPositionAll());
