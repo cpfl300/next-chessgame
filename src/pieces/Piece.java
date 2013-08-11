@@ -3,7 +3,7 @@ package pieces;
 import java.util.List;
 
 
-public abstract class Piece {
+public abstract class Piece implements PieceOperations{
 	public enum Color {
 		WHITE,
 		BLACK,
@@ -25,7 +25,7 @@ public abstract class Piece {
 			this.symbol = symbol;
 		}
 		
-		public char getSymbol() {
+		char getSymbol() {
 			return symbol;
 		}
 	}
