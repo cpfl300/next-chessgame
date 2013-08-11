@@ -10,6 +10,7 @@ import pieces.Knight;
 import pieces.Pawn;
 import pieces.Piece;
 import pieces.Piece.Color;
+import pieces.PieceOperations;
 import pieces.Position;
 import pieces.Queen;
 import pieces.Rook;
@@ -81,7 +82,7 @@ public class Rank {
 		
 	}
 
-	Piece move(Piece sourcePiece, Position target) {
+	PieceOperations move(Piece sourcePiece, Position target) {
 		sourcePiece.move(target);
 		rank.set(target.getX(), sourcePiece);
 		return sourcePiece;

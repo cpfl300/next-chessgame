@@ -9,6 +9,7 @@ import pieces.King;
 import pieces.Knight;
 import pieces.Pawn;
 import pieces.Piece;
+import pieces.PieceOperations;
 import pieces.Position;
 import pieces.Queen;
 import pieces.Rook;
@@ -49,7 +50,7 @@ public class Board {
 		}
 	}
 
-	Piece findPiece(String xy) {
+	PieceOperations findPiece(String xy) {
 		Position position = new Position(xy);
 		return findPiece(position);
 	}

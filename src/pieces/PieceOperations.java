@@ -1,13 +1,21 @@
 package pieces;
 
 public interface PieceOperations {
-	public Position getPosition();
 
-	public char getSymbol();
+	public abstract Position getPosition();
 
-	public boolean isWhite();
+	public abstract char getSymbol();
 
-	public Piece leave();
+	public abstract boolean isWhite();
 
-	public Piece move(Position target);
+	public abstract PieceOperations leave();
+
+	public abstract PieceOperations move(Position target);
+
+	public abstract int hashCode();
+
+	public abstract boolean equals(Object obj);
+
+	public abstract String toString();
+
 }

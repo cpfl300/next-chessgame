@@ -6,8 +6,8 @@ import pieces.Empty;
 import pieces.King;
 import pieces.Knight;
 import pieces.Pawn;
-import pieces.Piece;
 import pieces.Piece.Color;
+import pieces.PieceOperations;
 import pieces.Position;
 import pieces.Rook;
 
@@ -54,7 +54,7 @@ public class BoardTest extends TestCase {
 	public void testMovePiece() throws Exception {
 		board.initialize();
 		Position source = new Position("a2");
-		Piece sourcePiece = board.findPiece(source);
+		PieceOperations sourcePiece = board.findPiece(source);
 		assertEquals(new Pawn(Color.WHITE, source), sourcePiece);
 
 		Position target = new Position("a3");

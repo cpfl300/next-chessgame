@@ -3,7 +3,7 @@ package pieces;
 import java.util.List;
 
 
-public abstract class Piece implements PieceOperations{
+public abstract class Piece implements PieceOperations {
 	public enum Color {
 		WHITE,
 		BLACK,
@@ -40,10 +40,18 @@ public abstract class Piece implements PieceOperations{
 		this.position = position;
 	}
 	
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#getPosition()
+	 */
+	@Override
 	public Position getPosition(){
 		return this.position;
 	}
 	
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#getSymbol()
+	 */
+	@Override
 	public char getSymbol() {
 		if (isBlack()) {
 			return Character.toUpperCase(type.getSymbol());
@@ -51,7 +59,11 @@ public abstract class Piece implements PieceOperations{
 		return type.getSymbol();
 	}
 	
-    public boolean isWhite() {
+    /* (non-Javadoc)
+	 * @see pieces.PieceOperations#isWhite()
+	 */
+    @Override
+	public boolean isWhite() {
         if (Color.WHITE == color) {
             return true;
         }
@@ -71,18 +83,29 @@ public abstract class Piece implements PieceOperations{
 		return this.color == color ? true : false;
 	}
 
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#leave()
+	 */
+	@Override
 	public Piece leave() {
 		return new Empty(Color.NOCOLOR, this.position);
 	}
 	
-	public Piece move(Position target) {
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#move(pieces.Position)
+	 */
+	@Override
+	public PieceOperations move(Position target) {
 		this.position = target;
 		return this;
 	}
 	
 	abstract List<Position> getPossibleMoves();
 	
-	@Override
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#hashCode()
+	 */
+
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -93,7 +116,10 @@ public abstract class Piece implements PieceOperations{
 		return result;
 	}
 
-	@Override
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#equals(java.lang.Object)
+	 */
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -114,7 +140,10 @@ public abstract class Piece implements PieceOperations{
 		return true;
 	}
 
-	@Override
+	/* (non-Javadoc)
+	 * @see pieces.PieceOperations#toString()
+	 */
+
 	public String toString() {
 		return "Piece [color=" + color + ", type=" + type + ", position="
 				+ position + "]";
