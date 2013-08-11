@@ -114,4 +114,15 @@ public class BoardTest extends TestCase {
 		
 	}
 	
+	public void testGenerateDifferentType() throws Exception {
+		board.initialize();
+		board.setGenerateType(new GenerateConsol());
+		System.out.println(board.generateBoard());
+
+		board.setGenerateType(new GenerateHtml());
+		System.out.println(board.generateBoard());
+		
+		
+	}
+	
 }

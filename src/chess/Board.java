@@ -18,6 +18,7 @@ public class Board {
 	public static final String NEW_LINE = System.getProperty("line.separator");
 	public static final int ROW_SIZE = 8;
 	public static final int COLUMN_SIZE = 8;
+	Generate generate = new GenerateConsol();
 
 	List<Rank> ranks = new ArrayList<Rank>();
 
@@ -135,12 +136,20 @@ public class Board {
 		sb.append(rank.generate());
 		return sb.toString();
 	}
-
-	String generateBoard() {
+	
+	public String generateForPrint() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = ROW_SIZE; i > 0; i--) {
 			sb.append(generateRank(i - 1) + NEW_LINE);
 		}
 		return sb.toString();
+	}
+	
+	void setGenerateType(Generate generate) {
+		this.generate = generate;
+	}
+
+	String generateBoard() {
+		return generate.generate(this);
 	}
 }
